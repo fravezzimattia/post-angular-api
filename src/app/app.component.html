@@ -1,0 +1,40 @@
+<h1>
+	Angular - come comunicare con il server
+</h1>
+
+<div class="flex-row">
+	<div>
+		<h2>Customers:</h2>
+		<ul>
+			<li *ngFor="let customer of (customers | async)">
+				<div (click)="
+				showCustomerInformations(customer.id);
+				showGenderPreferenceByCustomerId(customer.id)
+				"> {{customer.name}}</div>
+			</li>
+		</ul>
+	</div>
+	<div class="flex-column">
+		<div *ngIf="!!customerDetail">
+			<h2>Detail:</h2>
+			<div> FirstName: {{ customerDetail.firstName }}</div>
+			<div> LastName: {{ customerDetail.lastName }}</div>
+			<div> Age: {{ customerDetail.age }}</div>
+			<div> Gender: {{ customerDetail.gender }}</div>
+			<h2>Customer Preference:</h2>
+			<ul>
+				<li *ngFor="let preference of customerDetail.preference">
+					{{ preference.name }}
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div *ngIf="!!(genderPreference | async)">
+		<h2>Gender Preference:</h2>
+		<ul>
+			<li *ngFor="let preference of (genderPreference | async)">
+				{{ preference.name }}
+			</li>
+		</ul>
+	</div>
+</div>
