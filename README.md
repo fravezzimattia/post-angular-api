@@ -1,4 +1,4 @@
-# Angular - come comunicare con il server
+# Angular: comunicare con il server mediante servizi
 ## Introduzione
 
 Al giorno d'oggi si rende necessaria la creazione di applicazioni web sempre più performanti che possano rendere la navigazione da parte dell'utente ricca e interattiva.
